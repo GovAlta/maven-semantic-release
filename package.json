@@ -1,33 +1,30 @@
 {
-  "name": "@conveyal/maven-semantic-release",
-  "version": "0.0.0-development",
+  "name": "@abgov/maven-semantic-release",
+  "version": "0.0.0",
   "description": "Automated release management for maven projects",
   "main": "index.js",
-  "author": "evansiroky <evan.siroky@yahoo.com>",
   "license": "MIT",
   "private": false,
   "scripts": {
-    "test": "mastarm lint lib",
     "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/conveyal/maven-semantic-release.git"
+    "url": "https://github.com/GovAlta/maven-semantic-release.git"
   },
   "dependencies": {
-    "@semantic-release/error": "^2.2.0",
-    "aggregate-error": "^1.0.0",
-    "execa": "^0.10.0",
-    "fs-extra": "^5.0.0",
-    "got": "^8.0.1",
-    "semver": "^5.5.0",
-    "xml2js-es6-promise": "^1.1.1"
+    "@semantic-release/error": "^4.0.0",
+    "aggregate-error": "^5.0.0",
+    "execa": "^9.5.0",
+    "fs-extra": "^11.3.0",
+    "got": "^11.8.5",
+    "semver": "^7.7.0",
+    "xml2js": "^0.6.2"
   },
   "devDependencies": {
-    "mastarm": "^5.1.3",
-    "semantic-release": "^17.3.0"
+    "semantic-release": "^23.0.0"
   },
   "peerDependencies": {
-    "semantic-release": "^17.3.0"
+    "semantic-release": "^23.0.0"
   }
 }

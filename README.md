@@ -1,5 +1,7 @@
 # maven-semantic-release
 
+Fork of [@conveyal/maven-semantic-release](https://github.com/conveyal/maven-semantic-release) for dependency updates.
+
 Automated release management for maven projects
 
 ## About
