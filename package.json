@@ -2,10 +2,16 @@
   "name": "@abgov/maven-semantic-release",
   "version": "0.0.0",
   "description": "Automated release management for maven projects",
-  "main": "index.js",
   "license": "MIT",
   "private": false,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
+    "lint": "eslint src/**/*.ts",
+    "build": "tsc --project tsconfig.json",
     "semantic-release": "semantic-release"
   },
   "repository": {
@@ -22,7 +28,14 @@
     "xml2js": "^0.6.2"
   },
   "devDependencies": {
-    "semantic-release": "^23.0.0"
+    "@eslint/js": "^9.19.0",
+    "@types/fs-extra": "^11.0.4",
+    "@types/semver": "^7.5.8",
+    "@types/xml2js": "^0.4.14",
+    "eslint": "^9.19.0",
+    "semantic-release": "^23.0.0",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.23.0"
   },
   "peerDependencies": {
     "semantic-release": "^23.0.0"
