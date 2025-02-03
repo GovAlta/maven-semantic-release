@@ -21,6 +21,9 @@ jobs:
           node-version: 20
           cache: 'yarn'
       - run: yarn install --frozen-lockfile
+      - run: |
+          yarn lint
+          yarn build
       - name: Semantic release
         shell: bash
         env:
