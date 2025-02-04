@@ -1,16 +1,15 @@
 import SemanticReleaseError from "@semantic-release/error";
-import type { Options } from "execa";
+import { execa, Options } from "execa";
 import fs from "fs-extra";
 import xml2js from "xml2js";
-import { Logger } from "./types";
-import ERROR_DEFINITIONS from "./definitions/errors";
+import { Logger } from "./types.js";
+import ERROR_DEFINITIONS from "./definitions/errors.js";
 import pkg from "../../package.json";
 
 /**
  * Execute while streaming to stdout in realtime
  */
 export async function exec(cmd: string, args: string[], opts?: Options) {
-  const { execa } = await import("execa");
   const childProcess = execa(cmd, args, opts);
   childProcess.stdout?.pipe(process.stdout);
   childProcess.stderr?.pipe(process.stderr);

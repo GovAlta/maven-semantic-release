@@ -1,8 +1,8 @@
 import { PublishContext } from "semantic-release";
-import type { MavenPluginOptions } from "./types";
-import { saveChangesToPomXml } from "./git";
-import { updateVersionInPomXml } from "./maven";
-import { printVersion } from "./util";
+import type { MavenPluginOptions } from "./types.js";
+import { saveChangesToPomXml } from "./git.js";
+import { updateVersionInPomXml } from "./maven.js";
+import { printVersion } from "./util.js";
 
 export async function prepare(
   config: MavenPluginOptions,

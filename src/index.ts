@@ -1,4 +1,4 @@
-export { prepare } from "./lib/prepare";
-export { publish } from "./lib/publish";
-export { verifyConditions } from "./lib/verify-conditions";
-export { verifyRelease } from "./lib/verify-release";
+export { prepare } from "./lib/prepare.js";
+export { publish } from "./lib/publish.js";
+export { verifyConditions } from "./lib/verify-conditions.js";
+export { verifyRelease } from "./lib/verify-release.js";

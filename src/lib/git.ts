@@ -1,6 +1,6 @@
-import type { execa } from "execa";
+import { execa } from "execa";
 import { PrepareContext, PublishContext } from "semantic-release";
-import { MavenPluginOptions } from "./types";
+import { MavenPluginOptions } from "./types.js";
 
 type ExecaOptions = Parameters<typeof execa>[1];
 
@@ -11,7 +11,6 @@ type ExecaOptions = Parameters<typeof execa>[1];
  * @param {Object} [execaOpts] Options to pass to `execa`.
  */
 async function add(files: string[], execaOpts: ExecaOptions) {
-  const { execa } = await import("execa");
   await execa("git", ["add", "--force", "--ignore-errors", ...files], {
     ...execaOpts,
     reject: false,
@@ -27,7 +26,6 @@ async function add(files: string[], execaOpts: ExecaOptions) {
  * @throws {Error} if the commit failed.
  */
 async function commit(message: string, execaOpts: ExecaOptions) {
-  const { execa } = await import("execa");
   await execa("git", ["commit", "-m", message], execaOpts);
 }
 
@@ -41,7 +39,6 @@ async function commit(message: string, execaOpts: ExecaOptions) {
  * @throws {Error} if the push failed.
  */
 async function push(origin: string, branch: string, execaOpts: ExecaOptions) {
-  const { execa } = await import("execa");
   await execa(
     "git",
     ["push", "--follow-tags", origin, `HEAD:${branch}`],
@@ -50,7 +47,6 @@ async function push(origin: string, branch: string, execaOpts: ExecaOptions) {
 }
 
 export async function configureGit(context: PublishContext) {
-  const { execa } = await import("execa");
   const { branch, cwd, env, logger } = context;
   const execaOpts = { env, cwd };
 
@@ -88,7 +84,6 @@ export async function mergeMasterIntoDev(
   config: MavenPluginOptions,
   context: PublishContext
 ) {
-  const { execa } = await import("execa");
   const { branch, cwd, env, logger } = context;
   const execaOpts = { env, cwd };
   const { devBranch, repositoryUrl } = config;

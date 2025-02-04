@@ -1,8 +1,8 @@
 import got from "got";
 import { VerifyReleaseContext } from "semantic-release";
 import semver from "semver";
-import type { Logger, MavenCentral, MavenPluginOptions, Pom } from "./types";
-import { getError, getPomInfo, printVersion } from "./util";
+import type { Logger, MavenCentral, MavenPluginOptions, Pom } from "./types.js";
+import { getError, getPomInfo, printVersion } from "./util.js";
 
 /**
  * Get the last release of the maven repository
@@ -92,7 +92,7 @@ async function getLatestVersionFromMavenCentral(pomXml: Pom, logger: Logger) {
 
   // get the last semver version from published repo
   logger.log("searching maven for term %s", searchTerm);
-  const mavenCentralJson = await got(
+  const mavenCentralJson = await got.default(
     `https://search.maven.org/solrsearch/select?q=${searchTerm}&rows=20&wt=json`
   ).json<MavenCentral>();
 
