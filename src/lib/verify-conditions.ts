@@ -55,7 +55,7 @@ function validatePomXml(pomXml: Pom) {
       pomValidationErrors.push(getError("ENOPOMPROJECTARTIFACTID"));
     }
     // does the version need to be set if using semantic-release?
-    if (!pomXml.project.version || pomXml.project.version.length !== 0) {
+    if (!pomXml.project.version || pomXml.project.version.length === 0) {
       pomValidationErrors.push(getError("ENOPOMPROJECTVERSION"));
     }
   }
