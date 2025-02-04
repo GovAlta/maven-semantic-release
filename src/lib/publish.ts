@@ -1,8 +1,8 @@
 import { PublishContext } from "semantic-release";
-import type { MavenPluginOptions } from "./types";
-import { configureGit, mergeMasterIntoDev, saveChangesToPomXml } from "./git";
-import { deploy, mvnPackage, updateVersionInPomXml } from "./maven";
-import { printVersion } from "./util";
+import type { MavenPluginOptions } from "./types.js";
+import { configureGit, mergeMasterIntoDev, saveChangesToPomXml } from "./git.js";
+import { deploy, mvnPackage, updateVersionInPomXml } from "./maven.js";
+import { printVersion } from "./util.js";
 
 /**
  * Publish repo to maven

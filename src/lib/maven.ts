@@ -1,7 +1,7 @@
 import { access, constants } from "fs";
 import type { NextRelease } from "semantic-release";
-import type { Logger } from "./types";
-import { exec, getError } from "./util";
+import type { Logger } from "./types.js";
+import { exec, getError } from "./util.js";
 
 /**
  * @return './mvnw' if we have wrapper in the project root, 'mvn' otherwise

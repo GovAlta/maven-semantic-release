@@ -1,8 +1,8 @@
 import AggregateError from "aggregate-error";
 import fs from "fs-extra";
 import { VerifyConditionsContext } from "semantic-release";
-import type { MavenPluginOptions, Pom } from "./types";
-import { getError, getPomInfo, printVersion } from "./util";
+import type { MavenPluginOptions, Pom } from "./types.js";
+import { getError, getPomInfo, printVersion } from "./util.js";
 
 /**
  * Verify that the maven project is properly setup to allow deployment to maven central
