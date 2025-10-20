@@ -4,7 +4,7 @@ import fs from "fs-extra";
 import xml2js from "xml2js";
 import { Logger } from "./types.js";
 import ERROR_DEFINITIONS from "./definitions/errors.js";
-import pkg from "../../package.json" assert { type: "json" };
+import pkg from "../../package.json" with { type: "json" };
 
 /**
  * Execute while streaming to stdout in realtime
